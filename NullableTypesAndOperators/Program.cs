@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NullableTypes
+namespace NullableTypesAndOperators
 {
+
     class Program
     {
         static void Main(string[] args)
@@ -22,7 +23,7 @@ namespace NullableTypes
 
 
             int?[] array = new int?[10];
-            
+
             /// When using nullable values, it is important to check if the nullable type is actually null before attempting to access it (thus resulting in a NullReferenceException)
             /// This can be accomplished in a few different ways
             /// 
@@ -48,6 +49,7 @@ namespace NullableTypes
             }
             else
             {
+                // Use T?.Value to return the underlying type's value
                 regularInt = nullableInt.Value;
             }
 
@@ -98,15 +100,14 @@ namespace NullableTypes
             /// More information on this subject here https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-
 
             List<int?> list = null;
-            
+
             // Since the list has not been instanciated yet, these expressions will not evaluate
 
             // Using a ? in front of the assessor "." this expression will not take place
             list?.Add(3);
-            
+
             // Index accessors such as [] in lists, arrays, ect also can use ? as a null check before
             int? value = list?[0];
-
 
 
             Console.WriteLine("Hello World!");
